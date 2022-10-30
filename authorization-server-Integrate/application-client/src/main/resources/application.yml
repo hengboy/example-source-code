@@ -1,0 +1,21 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          hengboy-authorization-code:
+            provider: hengboy
+            client-id: csdn
+            client-secret: csdn123
+            authorization-grant-type: authorization_code
+            redirect-uri: http://127.0.0.1:8080/authorized
+            scope:
+              - user.userInfo
+        provider:
+          hengboy:
+            issuer-uri: http://127.0.0.1:9000
+      resourceserver:
+        jwt:
+          issuer-uri: http://127.0.0.1:9000
+  main:
+    allow-bean-definition-overriding: true

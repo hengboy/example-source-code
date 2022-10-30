@@ -1,0 +1,10 @@
+server:
+  port: 9000
+
+spring:
+  datasource:
+    url: jdbc:mariadb://127.0.0.1:3306/oauth2
+    username: root
+    password: 123456
+    driver-class-name: org.mariadb.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
