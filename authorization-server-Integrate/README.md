@@ -103,3 +103,18 @@ mvn clean spring-boot:run
 ### 5. 访问
 
 访问[http://127.0.0.1:8080](http://127.0.0.1:8080)客户端地址时会自动跳转到授权服务器的登录页面`http://127.0.0.1:9000/login`，输入用户名：`yuqiyu`，密码：`123456`后会将`code`回调到`http://127.0.0.1:8080/authorized`，根据`code`从授权服务器获取`AccessToken`返回。
+
+### 6. 获取令牌
+
+```json
+{"access_token":"eyJraWQiOiIyZTM0MTZhNi03NGY5LTQ2ZDMtOGI3ZC03NDAyM2ZmZGEwMjUiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ5dXFpeXUiLCJhdWQiOiJjc2RuIiwibmJmIjoxNjY3MzcyNzE1LCJzY29wZSI6WyJ1c2VyLnVzZXJJbmZvIl0sImlzcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo5MDAwIiwiZXhwIjoxNjY3Mzc2MzE1LCJpYXQiOjE2NjczNzI3MTV9.AmLhfvEdWsUbLzQ4GpIkbiTOuHzCQu5hJ0Al_-NpcjsNJDjyxTVKlRYIxrsdLlWrqopW01vZ6Ci6Qt-pvKIh_TfCER-R1CvqTL_t4xe8uBBLQ-Oea11vvpK7U27amO1etW-CG-DK_DGWOX6syP7HgaNbvEtsCZ6taPr8ogMiES7Cmp14hzdK9mnzw6_OgkfIvslW5O0e4-4v80o3Jch_87KYCvfxUf-_TC-kOzg_yDAXkoEPbGgdbSHqSfcB6yDeTQMmdctpAjYKXXpIMji-3yPsKyIRG3qxrbvsNgoN3SxUnhRxm51H7ANuplWEro8WbeT6fUNH56nA-90Pi1_uCQ","refresh_token":"T0DkRSMD5dmG8ELbsGCfYVdHoYb2pksbydJTY_YQEDkQzjBWggVtMcipxfqiieB8bzloWrZ0WjQyeOqwc4il2pnerda0685vD3GTZDprgDSEenKyi7RhfMJFaaQHS-_C","scope":"user.userInfo","token_type":"Bearer","expires_in":3599}
+```
+
+### 7. 访问资源
+
+```bash
+curl -H 'Authorization: Bearer eyJraWQiOiIyZTM0MTZhNi03NGY5LTQ2ZDMtOGI3ZC03NDAyM2ZmZGEwMjUiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ5dXFpeXUiLCJhdWQiOiJjc2RuIiwibmJmIjoxNjY3MzcyNzE1LCJzY29wZSI6WyJ1c2VyLnVzZXJJbmZvIl0sImlzcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo5MDAwIiwiZXhwIjoxNjY3Mzc2MzE1LCJpYXQiOjE2NjczNzI3MTV9.AmLhfvEdWsUbLzQ4GpIkbiTOuHzCQu5hJ0Al_-NpcjsNJDjyxTVKlRYIxrsdLlWrqopW01vZ6Ci6Qt-pvKIh_TfCER-R1CvqTL_t4xe8uBBLQ-Oea11vvpK7U27amO1etW-CG-DK_DGWOX6syP7HgaNbvEtsCZ6taPr8ogMiES7Cmp14hzdK9mnzw6_OgkfIvslW5O0e4-4v80o3Jch_87KYCvfxUf-_TC-kOzg_yDAXkoEPbGgdbSHqSfcB6yDeTQMmdctpAjYKXXpIMji-3yPsKyIRG3qxrbvsNgoN3SxUnhRxm51H7ANuplWEro8WbeT6fUNH56nA-90Pi1_uCQ' http://127.0.0.1:10000/user/info
+
+this is user info.
+```
+
