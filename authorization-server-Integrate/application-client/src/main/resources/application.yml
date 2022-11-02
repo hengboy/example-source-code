@@ -14,8 +14,4 @@ spring:
         provider:
           hengboy:
             issuer-uri: http://127.0.0.1:9000
-      resourceserver:
-        jwt:
-          issuer-uri: http://127.0.0.1:9000
-  main:
-    allow-bean-definition-overriding: true
+            token-uri: http://127.0.0.1:9000/oauth2/token

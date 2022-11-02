@@ -6,6 +6,7 @@
     <modules>
         <module>authorization-server</module>
         <module>application-client</module>
+        <module>resource-server</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
