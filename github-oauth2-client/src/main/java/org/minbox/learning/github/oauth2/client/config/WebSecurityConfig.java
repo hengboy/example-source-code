@@ -17,8 +17,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class WebSecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(authorize -> authorize.mvcMatchers("/assets/**", "/webjars/**").permitAll()
-                        .anyRequest().authenticated())
+        http.authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
                 .oauth2Login(Customizer.withDefaults())
                 .oauth2Client(Customizer.withDefaults());
         return http.build();

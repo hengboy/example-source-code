@@ -7,6 +7,8 @@ spring:
       client:
         registration:
           github-idp:
+            # 内置公共的provider，@see org.springframework.security.config.oauth2.client.CommonOAuth2Provider
+            # 自动回调：http://127.0.0.1:8080/login/oauth2/code/github-idp，相关过滤器：OAuth2LoginAuthenticationFilter
             provider: github
             # 使用环境变量的配置参数
             client-id: ${GITHUB_CLIENT_ID:github-client-id}
