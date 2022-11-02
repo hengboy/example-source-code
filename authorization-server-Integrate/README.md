@@ -1,6 +1,6 @@
 ## SpringSecurity整合新版本Authorization Server
 
-基于`Spring Security 5.x`以及最新版本的`authorization -server`实现。
+基于`Spring Security 5.x`以及最新版本的[authorization-server](https://github.com/spring-projects/spring-authorization-server)实现。
 
 ## 运行示例
 
