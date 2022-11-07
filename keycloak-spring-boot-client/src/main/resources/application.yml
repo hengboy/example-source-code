@@ -1,0 +1,24 @@
+keycloak:
+  # 是否为开放的客户端，开放的客户端不需要配置秘钥
+  public-client: true
+  # 客户端所属的领域
+  realm: minbox
+  # keycloak服务地址
+  auth-server-url: http://localhost:10000
+  # 客户端ID
+  resource: example-learning
+  security-constraints:
+    # 配置admin角色所访问的地址列表
+    - auth-roles:
+        - admin
+      security-collections:
+        - patterns:
+            - /admin
+            - /admin/*
+    # 配置user角色所访问的地址列表
+    - auth-roles:
+        - user
+      security-collections:
+        - name: common user
+          patterns:
+            - /user/info
