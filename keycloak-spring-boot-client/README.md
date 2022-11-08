@@ -3,7 +3,10 @@
 >
 > 使用文档详见：https://www.keycloak.org/docs/latest/securing_apps/index.html#_spring_boot_adapter
 
-
+### 启动Keycloak
+```bash
+docker run -p 10000:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin --name keycloak -d quay.io/keycloak/keycloak:20.0.0 start-dev
+```
 
 ### 配置Keycloak
 
