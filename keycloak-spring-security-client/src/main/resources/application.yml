@@ -7,16 +7,3 @@ keycloak:
   auth-server-url: http://localhost:10000
   # 客户端ID
   resource: example-learning
-  security-constraints:
-    # 配置admin角色所访问的地址列表
-    - auth-roles:
-        - admin
-      security-collections:
-        - patterns:
-            - /admin
-    # 配置user角色所访问的地址列表
-    - auth-roles:
-        - user
-      security-collections:
-        - patterns:
-            - /customer

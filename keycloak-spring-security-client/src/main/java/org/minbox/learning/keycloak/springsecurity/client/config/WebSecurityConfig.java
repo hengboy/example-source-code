@@ -47,6 +47,8 @@ public class WebSecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
         super.configure(http);
         http
                 .authorizeRequests()
+                .mvcMatchers("/customer/**").hasAuthority("user")
+                .mvcMatchers("/admin/**").hasAuthority("admin")
                 .anyRequest().authenticated();
     }
 }
