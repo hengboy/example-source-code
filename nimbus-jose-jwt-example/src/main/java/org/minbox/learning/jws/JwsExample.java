@@ -90,8 +90,13 @@ public class JwsExample {
         JWSSigner signer = new MACSigner(sharedSecret);
 
         PayloadBody payloadBody = createPayloadBody();
-
-        JWSObject jwsObject = new JWSObject(new JWSHeader(JWSAlgorithm.HS256), new Payload(JsonUtils.toJsonString(payloadBody)));
+        // @formatter:off
+        JWSHeader jwsHeader =
+                new JWSHeader.Builder(JWSAlgorithm.HS256)
+                        .type(JOSEObjectType.JWT)
+                        .build();
+        // @formatter:on
+        JWSObject jwsObject = new JWSObject(jwsHeader, new Payload(JsonUtils.toJsonString(payloadBody)));
 
         // Apply the HMAC
         jwsObject.sign(signer);
@@ -113,7 +118,7 @@ public class JwsExample {
 
 
     public static void main(String[] args) throws Exception {
-        rsa256();
+        hs256();
     }
 
 
