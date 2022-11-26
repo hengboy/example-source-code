@@ -21,6 +21,7 @@ create table oauth2.oauth2_authorization
     registered_client_id          varchar(100)                            not null,
     principal_name                varchar(200)                            not null,
     authorization_grant_type      varchar(100)                            not null,
+    authorized_scopes             varchar(1000)                           null,
     attributes                    text                                    null,
     state                         varchar(500)                            null,
     authorization_code_value      text                                    null,
@@ -67,8 +68,6 @@ create table oauth2.oauth2_registered_client
     client_settings               varchar(2000)                           not null,
     token_settings                varchar(2000)                           not null
 );
-
-
 ```
 
 
