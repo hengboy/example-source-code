@@ -7,11 +7,12 @@ spring:
             provider: hengboy
             client-id: csdn
             client-secret: csdn123
+            client-authentication-method: client_secret_basic
             authorization-grant-type: authorization_code
             redirect-uri: http://127.0.0.1:8080/authorized
             scope:
               - user.userInfo
         provider:
           hengboy:
-            issuer-uri: http://127.0.0.1:9000
+            authorization-uri: http://127.0.0.1:9000/oauth2/authorize
             token-uri: http://127.0.0.1:9000/oauth2/token
