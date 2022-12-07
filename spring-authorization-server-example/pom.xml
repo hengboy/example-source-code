@@ -11,6 +11,7 @@
     <modules>
         <module>default-authorization-server</module>
         <module>message-client</module>
+        <module>message-resource</module>
     </modules>
 
     <properties>
